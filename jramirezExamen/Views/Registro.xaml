@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="jramirezExamen.Views.Registro"
+             Title="Registro" Height="400" Width="500" >
+    <VerticalStackLayout>
+        
+        <Grid>
+            <Label x:Name="Conectado" Text="Usuario conectado: " FontSize="16" Margin="0,20,0,0"/>
+
+            <Grid Margin="20,60,20,20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Nombre:"  Margin="0,5"/>
+                <Entry x:Name="Nombre"  Margin="5" Grid.Row="0" Grid.Column="1"/>
+
+                <Label Text="Apellido:"  Margin="0,5" Grid.Row="1"/>
+                <Entry x:Name="Apellido"  Margin="5" Grid.Row="1" Grid.Column="1"/>
+
+                <Label Text="Escoja el Iva:"  Margin="0,5" Grid.Row="2"/>
+                <Picker x:Name="IVA"  Margin="5" Grid.Row="2" Grid.Column="1">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>5% IVA</x:String>
+                            <x:String>10% IVA</x:String>
+                            <x:String>15% IVA</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker> 
+
+                <Label Text="Fecha:"  Margin="0,5" Grid.Row="3"/>
+                <DatePicker x:Name="Fecha"  Margin="5" Grid.Row="3" Grid.Column="1"/>
+
+                <Entry Text="Ciudad:"  Margin="0,5" Grid.Row="4"/>
+                <Picker x:Name="Ciudad"  Margin="5" Grid.Row="4" Grid.Column="1">
+                    <Picker.ItemsSource>
+                        <x:String>Quito</x:String>
+                        <x:String>Guaquill</x:String>
+                        <x:String>Cuenca</x:String>
+                    </Picker.ItemsSource>
+                </Picker> 
+
+                <Label Text="Monto Inicial:"  Margin="0,5" Grid.Row="5"/>
+                <Entry x:Name="InitialAmountTextBox"  Margin="5" Grid.Row="5" Grid.Column="1"/>
+
+                <Label Text="Cuota Mensual:"  Margin="0,5" Grid.Row="6"/>
+                <Entry x:Name="MonthlyFeeTextBox" Margin="5" Grid.Row="6" Grid.Column="1" IsReadOnly="True"/>
+
+                <Button Text="Calcular pago Mnsual" x:Name="calcular" Clicked="calcular_Clicked"/>
+                <Button x:Name="resumen" Text="Ver resumen" Clicked="resumen_Clicked"/>
+
+            </Grid>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

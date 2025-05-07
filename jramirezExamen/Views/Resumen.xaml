@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="jramirezExamen.Views.Resumen"
+             Title="Resumen">
+    <ContentPage.Resources>
+        <!-- Estilos explícitos -->
+        <Style x:Key="labelStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="DarkBlue" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+
+        <Style x:Key="buttonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="LightGreen" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="FontSize" Value="18" />
+        </Style>
+    </ContentPage.Resources>
+    <VerticalStackLayout Height="400" Width="500">
+        <Label Text="{Binding Nombres}" Style="{StaticResource labelStyle}" />
+        <Label Text="{Binding Apellidos}" Style="{StaticResource labelStyle}" />
+        <Label Text="{Binding IVA}" Style="{StaticResource labelStyle}" />
+        <Label Text="{Binding Fecha, StringFormat='Fecha de Nacimiento: {0:dd/MM/yyyy}'}" Style="{StaticResource labelStyle}" />
+        <Label Text="{Binding Ciudad}" Style="{StaticResource labelStyle}" />
+        <Label Text="{Binding MontoInicial, StringFormat='Salario: ${0:F2}'}" Style="{StaticResource labelStyle}" />
+        <Label Text="{Binding CuaotaMensual, StringFormat='Salario: ${0:F2}'}" Style="{StaticResource labelStyle}" />
+        <Label Text="{Binding Pagototal , StringFormat='Aporte IESS: ${0:F2}'}" Style="{StaticResource labelStyle}" />
+
+        <Button x:Name="cerrar" Text="Cerrar Secion" Clicked="cerrar_Clicked"/>
+
+    </VerticalStackLayout>
+</ContentPage>
