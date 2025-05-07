@@ -13,7 +13,7 @@ public partial class Registro : ContentPage
     private void calcular_Clicked(object sender, EventArgs e)
     {
         double montoInicial = double.Parse(InitialAmountTextBox.Text);
-        double cuotaMensual = montoInicial * 0.05;  // Ejemplo de c·lculo
+        double cuotaMensual = montoInicial * 0.05;  // Ejemplo de c√°lculo
         MonthlyFeeTextBox.Text = cuotaMensual.ToString("C2");
     }
 
@@ -31,18 +31,7 @@ public partial class Registro : ContentPage
             return;
         }
 
-        var resumen = new Resumen();   
-        {
-
-
-            Nombre = Nombre.Text;
-            Apellido = Apellido.Text;
-            TipoIdentificacion = VAComboBox.SelectedItem.ToString();
-            FechaNacimiento = DatePicker.Date; 
-            InitialAmountTextBox = double.Parse(InitialAmountTextBox.Text);
-            MonthlyFeeTextBox = double.Parse(MonthlyFeeTextBox.Text);
-        }
-        ;
+       
 
         await Navigation.PushAsync(new Resumen(resumen));
     }
